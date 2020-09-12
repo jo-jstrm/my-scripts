@@ -1,10 +1,11 @@
 #! /bin/sh
 
 # Author : Johannes Jestram
-# Usage : required argruments: 1) desired number of panes for tmux window, 2) path  where tmux should open
+# Usage : required argruments: 1) desired number of panes for tmux window
 
-#Read input
+# Read input
 NUM_PANES=$1
+NAME="srt$NUM_PANES"
 
 #functions
 split_it(){
@@ -24,9 +25,8 @@ case $NUM_PANES in
 		exit 1
 		;;
 	*) 
-		tmux new-session -d -n srt
-		tmux selectp -t 1
-
-		split_it $NUM_PANES
+		tmux new-session -d -s $NAME		
+		split_it $NUM_PANES		
+		tmux attach -t $NAME
 		;;
 esac
