@@ -13,4 +13,7 @@ tmux  \
   split-window "./rime --config-file=../run/local-run-no-docker/node6.ini; read" \; \
   select-layout tiled #even-vertical
 
+tmux  \
+  new-session -d -s 3 "./rime --config-file=../run/local-run-no-docker/node7.ini; read"
+
 tmux attach -t 01
