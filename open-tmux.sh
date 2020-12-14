@@ -5,7 +5,8 @@
 
 # Read input
 NUM_PANES=$1
-NAME="srt$NUM_PANES"
+SESSION_NAME=$2
+NAME="$2"
 
 #functions
 split_it(){
